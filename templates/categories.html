@@ -1,0 +1,65 @@
+<html>
+<head>
+  <style>
+  body{
+    text-align: center;
+    margin-top: 100px;
+    background-image: url({{url_for('static',filename='/1.jpg')}});
+  }
+  h1{
+    color:#355;
+    padding-bottom: 50px;
+    font-size: 50px
+
+      }
+  a {
+      color: #0953ff;
+      font-size: 18px;
+      display:inline-block;
+      margin-right: 150px;
+      align-items: center;
+      }
+  li {
+    margin-bottom:50px
+  }
+
+  .back {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+  }
+
+
+  button {
+    position: fixed;
+    top: 3px;
+    right: 5px;
+    width: 75px;
+    }
+    button > a {
+      color: black;
+      font-size: 18px;
+      text-decoration: none;
+      font-family: serif;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <a class="back" href="{{url_for('main')}}"> Back </a>
+
+  <h1> Categories </h1>
+    {% for i in categories %}
+
+  <a href="{{url_for('showmovies',category_id=i.id)}}"> {{i.name}} </a>
+
+    {% endfor %}
+
+    {% if (account_id) %}
+    <button id="sigoutButton"><a href="{{url_for('gdisconnect')}}">Signout </a> </button>
+    {% endif %}
+
+</html>
+</body>

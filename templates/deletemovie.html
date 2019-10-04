@@ -1,0 +1,24 @@
+<html>
+
+  <head>
+    <style>
+    body {
+        background-image: url({{url_for('static',filename='/1.jpg')}});
+      }
+    </style>
+  </head>
+  <body>
+    <form  action="{{url_for('deletemovie',movie_id=movie.id,category_id=category.id)}}" method="post">
+
+      <h2> Are you sure u want to delete {{movie.name}} ?
+      <input type="submit" value="yes">
+      </br>
+
+    </form>
+  </br></br>
+    <a href="{{url_for('movieInfo',category_id=category.id, movie_id=movie.id,)}}">
+      Cancel
+    </a>
+
+  </body>
+</html>

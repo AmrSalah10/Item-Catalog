@@ -1,0 +1,48 @@
+<html>
+<head>
+  <style>
+    body {
+        background-image: url({{url_for('static',filename='/1.jpg')}});
+      }
+      h2 {
+        color:#501c4e;
+        padding-bottom: 25px;
+        font-size: 50px
+      }
+      p {
+        width: 500px;
+        font-size: 25px;
+        font-family: serif;
+        color: blue;
+      }
+      .rating {
+        color: red;
+        font-size: 20px
+      }
+      span {
+        color: #3e3737;
+        font-weight: bold;
+      }
+  </style>
+</head>
+<body>
+
+  <h2>{{movie.name}}</h2>
+
+
+  <p> <span> Story </span>: {{movie.story}}
+
+
+  <p class="rating"><span> IMDB Rating </span>:{{movie.IMDB_Rating}}
+
+  </br></br>
+  {% if user_id == movie.user_id %}
+  <a href="{{url_for('editmovie',movie_id=movie.id,category_id=category.id)}}"> Edit </a>
+  <a href="{{url_for('deletemovie',movie_id=movie.id,category_id=movie.category_id)}}" style="margin-left:3px"> Delete </a>
+  {% endif %}
+  </br></br>
+
+  <a href="{{url_for('showmovies',category_id=category.id)}}"> Back </a>
+
+</body>
+</html>

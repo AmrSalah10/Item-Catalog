@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <style>
+  body {
+      background-image: url({{url_for('static',filename='/1.jpg')}});
+    }
+  textarea[name='story'] {
+    height: 200px;
+    width: 600px;
+  }
+
+  textarea[name='name'] {
+    height: 30px;
+    width: 120px;
+  }
+  </style>
+</head>
+<body>
+  <form  action="{{url_for('editmovie',movie_id=movie.id,category_id=category.id)}}" method="post">
+
+    <textarea name="name"> {{movie.name}}</textarea>
+  </br></br>
+    <textarea name="story"> {{movie.story}}</textarea>
+  </br></br>
+  <textarea name="IMDB_Rating"> {{movie.IMDB_Rating}}</textarea>
+</br></br>
+    <input type="submit" value="Edit">
+
+  </form>
+</br></br>
+  <a href="{{url_for('movieInfo',category_id=category.id, movie_id=movie.id,)}}">
+    Cancel
+  </a>
+</body>
+</html>

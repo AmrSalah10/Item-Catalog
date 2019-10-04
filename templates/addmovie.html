@@ -1,0 +1,45 @@
+<html>
+<head>
+  <style>
+
+  body {
+    background-image: url({{url_for('static',filename='/1.jpg')}});
+  }
+  input{
+    padding: 3px;
+  }
+
+  </style>
+</head>
+<body>
+
+  <h1> Add Movie </h1>
+
+  <form method='POST' action='{{url_for("addmovie",category_id=category.id)}}'>
+
+    <label> Name </label>
+    <input type="text" name="name" placeholder='Movie Name'>
+  </br></br>
+
+    <label> Story </label>
+    </br>
+    <textarea rows="6" cols="60" name="story"> </textarea>
+    </br></br>
+
+    <label> IMDB Rating </label>
+    </br>
+    <input type="text" name="IMDB_Rating">
+    </br></br>
+
+      <input type="submit" value='Add Movie'>
+
+  </form>
+</br></br>
+<!--
+Link to showmovies page
+-->
+  <a href="{{url_for('showmovies',category_id=category.id)}}">
+    Cancel
+  </a>
+</html>
+</body>

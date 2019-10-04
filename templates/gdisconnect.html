@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+    body {
+
+      text-align: center;
+      margin-top:200px;
+      background-image: url({{url_for('static',filename='/1.jpg')}});
+    }
+    h1{
+      color:#355;
+      font-size: 25px;
+      text-decoration: none;
+      font-family: serif;
+      text-align: center;
+    }
+    a {
+
+    }
+  </style>
+ </head>
+  <body>
+    {{response.data}}
+  </br></br>
+  <!--
+   Link to homepage
+  -->
+    <a href="{{(url_for('main'))}}"> Go to home page </a>
+  </body>
+</html>
