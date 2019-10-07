@@ -161,7 +161,7 @@ def login_required(f):
 def gdisconnect():
     access_token = login_session.get('access_token')
     if access_token is None:
-        print 'Access Token is None'
+        print ('Access Token is None')
         response = make_response(json.dumps('Current user not connected.'),
                                  401)
         response.headers['Content-Type'] = 'apllication/json'
